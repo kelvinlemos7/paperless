@@ -145,7 +145,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#f4f6f8] p-4 md:p-8 font-sans">
-      <div className="max-w-[1400px] mx-auto space-y-6">
+      <div className="max-w-1400px mx-auto space-y-6">
         <header className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex items-center gap-4">
             <div className="bg-slate-900 p-3 rounded-xl shadow-lg">
@@ -180,7 +180,7 @@ export default function Home() {
             <Table>
               <TableHeader className="bg-slate-900 text-white">
                 <TableRow className="hover:bg-slate-900 border-none">
-                  <TableHead className="w-[50px]"></TableHead>
+                  <TableHead className="w-50px"></TableHead>
                   <TableHead className="text-white font-bold py-4">Produto</TableHead>
                   <TableHead className="text-white font-bold">SCC</TableHead>
                   <TableHead className="text-white font-bold">SKU</TableHead>
@@ -190,7 +190,7 @@ export default function Home() {
                   <TableHead className="text-white font-bold text-center">Conferido</TableHead>
                   <TableHead className="text-white font-bold text-center">Final (Sist.)</TableHead>
                   <TableHead className="text-white font-bold text-center">Status</TableHead>
-                  <TableHead className="w-[120px] text-center"></TableHead>
+                  <TableHead className="w-120px text-center"></TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
@@ -211,7 +211,7 @@ export default function Home() {
                         className="w-5 h-5 border-2"
                       />
                     </TableCell>
-                    <TableCell className="font-bold text-slate-900 min-w-[180px]">{item.product}</TableCell>
+                    <TableCell className="font-bold text-slate-900 min-w-180px">{item.product}</TableCell>
                     <TableCell>
                       {editingId === item.id ? (
                         <Input value={item.scc} onChange={(e) => handleUpdate(item.id, 'scc', e.target.value)} className="h-8 font-mono text-xs w-32" />

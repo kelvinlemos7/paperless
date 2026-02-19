@@ -4,9 +4,8 @@ import tailwindcss from "@tailwindcss/vite"
 import path from "path"
 
 export default defineConfig({
-  base: "/",
-  // Se o terminal estiver na 'paperless', ele entra em 'Cargo-Receiver/client'
-  root: path.resolve(__dirname, "Cargo-Receiver/client"),
+  // Root aponta para a pasta onde está o index.html
+  root: path.resolve(__dirname, "client"),
   
   plugins: [
     tailwindcss(), 
@@ -15,16 +14,13 @@ export default defineConfig({
   
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "Cargo-Receiver/client/src"),
+      "@": path.resolve(__dirname, "client/src"),
     },
   },
 
   build: {
-    // Joga a pasta dist para a raiz total (paperless/dist)
+    // Sai da pasta client e cria a dist na pasta Cargo-Receiver
     outDir: path.resolve(__dirname, "dist"),
     emptyOutDir: true,
-    rollupOptions: {
-      input: path.resolve(__dirname, "Cargo-Receiver/client/index.html"),
-    },
   }
 })
